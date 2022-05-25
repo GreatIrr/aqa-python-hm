@@ -1,4 +1,5 @@
 from appium import webdriver
+from appium.webdriver.webdriver import WebDriver
 
 
 class AppiumDriver:
@@ -23,7 +24,7 @@ class AppiumDriver:
         if not AppiumDriver.__driver:
             AppiumDriver.__driver = AppiumDriver.__WebDriver().driver
 
-    def get_driver(self) -> object:
+    def get_driver(self) -> WebDriver:
         return self.__driver
 
     @staticmethod

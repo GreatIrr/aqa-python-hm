@@ -1,11 +1,14 @@
-import Steps
+import steps.settingsteps
+import steps.generalviewsteps
+import steps.devicemanagementviewsteps
+import steps.bothomeviewsteps
 
 
 def test_dummy_app():
-    settings_steps = Steps.SettingsViewSteps()
-    general_steps = Steps.GeneralViewSteps()
-    device_management_steps = Steps.DeviceManagementViewSteps()
-    bot_home_steps = Steps.BotHomeViewSteps()
+    settings_steps = steps.settingsteps.SettingsViewSteps()
+    general_steps = steps.generalviewsteps.GeneralViewSteps()
+    device_management_steps = steps.devicemanagementviewsteps.DeviceManagementViewSteps()
+    bot_home_steps = steps.bothomeviewsteps.BotHomeViewSteps()
 
     settings_steps.get_driver().activate_app("com.apple.Preferences")
     settings_steps.check_is_view_active()
@@ -22,5 +25,4 @@ def test_dummy_app():
 
     bot_home_steps.get_driver().terminate_app('com.apple.Preferences')
     bot_home_steps.get_driver().quit()
-
 
